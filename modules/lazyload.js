@@ -3,7 +3,9 @@ $().ready(function(){
         const images = document.querySelectorAll("img.lazyload");
         images.forEach(img => {
             img.src = img.dataset.src;
-            img.srcset = img.dataset.srcset;
+            if (img.dataset.srcset){
+                img.srcset = img.dataset.srcset;
+            } 
         });
     } else {
         // Dynamically import the LazySizes library
