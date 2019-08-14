@@ -1,0 +1,43 @@
+{
+	"name": "Lazyload",
+	"version": "0.0.1",
+	"author": [
+		"xwbx"
+	],
+	"url": "",
+	"descriptionmsg": "lazyload-desc",
+	"type": "other",
+	"license-name": "MIT",
+	"MessagesDirs": {
+		"Lazyload": [
+			"i18n"
+		]
+	},
+	"Hooks": {
+		"ThumbnailBeforeProduceHTML": [
+			"Lazyload::ThumbnailBeforeProduceHTML"
+		],
+		"BeforePageDisplay": [
+			"Lazyload::BeforePageDisplay"
+		]
+	},
+	"AutoloadClasses": {
+		"Lazyload": "Lazyload.class.php"
+	},
+	"manifest_version": 1,
+	"ResourceModules": {
+		"ext.lazyload": {
+			"scripts": [
+				"lazyload.js"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "Lazyload/modules"
+	}
+}
