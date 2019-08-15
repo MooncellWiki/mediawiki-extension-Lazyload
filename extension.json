@@ -1,6 +1,6 @@
 {
 	"name": "Lazyload",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"author": [
 		"xwbx"
 	],
@@ -24,20 +24,5 @@
 	"AutoloadClasses": {
 		"Lazyload": "Lazyload.class.php"
 	},
-	"manifest_version": 1,
-	"ResourceModules": {
-		"ext.lazyload": {
-			"scripts": [
-				"lazyload.js"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		}
-	},
-	"ResourceFileModulePaths": {
-		"localBasePath": "modules",
-		"remoteExtPath": "Lazyload/modules"
-	}
+	"manifest_version": 1
 }
