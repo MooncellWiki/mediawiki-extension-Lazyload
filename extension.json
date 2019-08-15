@@ -1,10 +1,10 @@
 {
 	"name": "Lazyload",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"author": [
 		"xwbx"
 	],
-	"url": "",
+	"url": "https://github.com/mooncellwiki/Lazyload",
 	"descriptionmsg": "lazyload-desc",
 	"type": "other",
 	"license-name": "MIT",

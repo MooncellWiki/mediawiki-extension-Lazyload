@@ -6,7 +6,7 @@ class Lazyload {
         if (isset($wgTitle) && $wgTitle->getNamespace() === NS_FILE) return true;
         if (isset($attribs['class']) && strpos( $attribs['class'], 'no-lazy' ) !== false) return true;
 	    $attribs['data-src'] = $attribs['src'];
-        $attribs['src'] = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+        $attribs['src'] = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
         $attribs['class'] = 'lazyload';
 	    if (isset($attribs['srcset'])) {
 		    $attribs['data-srcset'] = $attribs['srcset'];
