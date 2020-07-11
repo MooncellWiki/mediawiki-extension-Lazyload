@@ -15,7 +15,7 @@ class Lazyload {
         return true;
     }
     public static function BeforePageDisplay($out, $skin) {
-        $out->addHeadItems('<script type="application/javascript">function isSupportWebp(){try{return;document.createElement("canvas").toDataURL("image/webp",0.5).indexOf("data:image/webp")===0?1:2}catch(err){return 2}}document.addEventListener("lazybeforeunveil",function(e){if(SUPPORT_WEBP!=1&&SUPPORT_WEBP!=2){SUPPORT_WEBP=isSupportWebp()}if(SUPPORT_WEBP==1){var src=e.target.getAttribute("data-src").split(".");if(["png","jpg","jpeg"].includes(src[src.length-1])){src.pop();src.push("webp");e.target.setAttribute("data-src",src.join("."))}}});</script>');
+        $out->addHeadItems('<script type="application/javascript">function isSupportWebp(){try{return;document.createElement("canvas").toDataURL("image/webp",0.5).indexOf("data:image/webp")===0?1:2}catch(err){return 2}}SUPPORT_WEBP=0;document.addEventListener("lazybeforeunveil",function(e){if(SUPPORT_WEBP!=1&&SUPPORT_WEBP!=2){SUPPORT_WEBP=isSupportWebp()}if(SUPPORT_WEBP==1){var src=e.target.getAttribute("data-src").split(".");if(["png","jpg","jpeg"].includes(src[src.length-1])){src.pop();src.push("webp");e.target.setAttribute("data-src",src.join("."))}}});</script>');
         $out->addHeadItems('<script src="https://s3.pstatp.com/cdn/expire-1-M/lazysizes/4.1.8/lazysizes.min.js" type="application/javascript"></script>');
         return true;
     }
