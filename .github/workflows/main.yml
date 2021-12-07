@@ -20,10 +20,15 @@ jobs:
         shell: bash
         run: |
           PROJECT_VERSION=$(echo $(sed -n 's/"version": "\(.*\)",/\1/p' extension.json | head -n1))
-          PKG_NAME=Lazyload-master-v${PROJECT_VERSION}.tar.gz
+          PROJECT_NAME=$(echo $(sed -n 's/"name": "\(.*\)",/\1/p' extension.json | head -n1))
+          PKG_NAME=${PROJECT_NAME}-master-v${PROJECT_VERSION}.tar.gz
           echo ::set-output name=PKG_NAME::${PKG_NAME}
+          echo ::set-output name=PROJECT_NAME::${PROJECT_NAME}
       - name: zip
-        run: tar -czvf ${{ steps.package.outputs.PKG_NAME }} i18n/ README.md Lazyload.class.php extension.json
+        run: |
+          mkdir ${{ steps.package.outputs.PROJECT_NAME }}
+          cp -r i18n/ README.md Lazyload.class.php extension.json ${{ steps.package.outputs.PROJECT_NAME }}
+          tar -czvf ${{ steps.package.outputs.PKG_NAME }} Lazyload
       - name: "Artifact upload: tarball"
         uses: actions/upload-artifact@master
         with:
