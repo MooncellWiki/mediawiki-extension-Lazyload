@@ -20,7 +20,7 @@ jobs:
         shell: bash
         run: |
           PROJECT_VERSION=$(echo $(sed -n 's/"version": "\(.*\)",/\1/p' extension.json | head -n1))
-          PKG_NAME=VectorMenuSidebar-master-v${PROJECT_VERSION}.tar.gz
+          PKG_NAME=Lazyload-master-v${PROJECT_VERSION}.tar.gz
           echo ::set-output name=PKG_NAME::${PKG_NAME}
       - name: zip
         run: tar -czvf ${{ steps.package.outputs.PKG_NAME }} i18n/ README.md Lazyload.class.php extension.json
