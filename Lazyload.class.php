@@ -15,7 +15,7 @@ class Lazyload {
         return true;
     }
     public static function BeforePageDisplay($out, $skin) {
-        $out->addHeadItems('<script src="https://s3.pstatp.com/cdn/expire-1-M/lazysizes/4.1.8/lazysizes.min.js" type="application/javascript"></script>');
+        $out->addHeadItems('<link rel="preload" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-3-y/lazysizes/4.1.8/lazysizes.min.js" as="script"><script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-3-y/lazysizes/4.1.8/lazysizes.min.js" type="application/javascript"></script>');
         return true;
     }
 }
