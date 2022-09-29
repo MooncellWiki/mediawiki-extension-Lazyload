@@ -7,7 +7,11 @@ class Lazyload {
         if (isset($attribs['class']) && strpos( $attribs['class'], 'no-lazy' ) !== false) return true;
 	    $attribs['data-src'] = $attribs['src'];
         $attribs['src'] = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
-        $attribs['class'] = 'lazyload';
+        if(isset($attribs['class'])){
+            $attribs['class'] .= ' lazyload';
+        } else {
+            $attribs['class'] = 'lazyload';
+        }
 	    if (isset($attribs['srcset'])) {
 		    $attribs['data-srcset'] = $attribs['srcset'];
 		    unset($attribs['srcset']);
