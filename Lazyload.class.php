@@ -8,7 +8,9 @@ class Lazyload {
 	    $attribs['data-src'] = $attribs['src'];
         $attribs['src'] = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
         if(isset($attribs['class'])){
-            $attribs['class'] .= ' lazyload';
+            if(strpos( $attribs['class'], 'defer-load' ) == false){
+                $attribs['class'] .= ' lazyload';
+            }
         } else {
             $attribs['class'] = 'lazyload';
         }
