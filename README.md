@@ -18,6 +18,7 @@ wfLoadExtension( 'Lazyload' );
 	transition: opacity 300ms;
 }
 ```
+用的时候自己想办法在全局加载lazysizes的js
 ## Detail
 
 * 懒加载由[lazysizes.js](https://github.com/aFarkas/lazysizes)完成
